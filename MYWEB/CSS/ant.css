@@ -37,7 +37,7 @@ h1 {
 }
 
 canvas {
-  border: 3px solid #FF00FF;
+  border: 3px solid #bf12f3;
   display: block;
   background-color: #1D1F20;
   margin: 0 auto;
@@ -47,7 +47,7 @@ canvas {
   font-family: "Guano";
   background-color: #1D1F20;
   color: white;
-  border: 1px solid #FF00FF;
+  border: 1px solid #bf12f3;
   padding: 5px;
   margin: 10px 0;
   border-radius: 5px;
@@ -57,7 +57,7 @@ button {
   font-family: "Guano";
   height: 40px;
   width: 100px;
-  background-color: #FF00FF;
+  background-color: #bf12f3;
   color: #000;
   border: none;
   border-radius: 20px;
@@ -67,7 +67,7 @@ button {
 }
 
 button:hover {
-  background-color: #FF00FF;
+  background-color: #bf12f3;
   transform: scale(1.05);
 }
 
@@ -75,7 +75,7 @@ button:hover {
   position: fixed;
   background-color: #1D1F20;
   color: #ffffff;
-  border: 2px solid #FF00FF;
+  border: 2px solid #bf12f3;
 }
 
 #backButton {
