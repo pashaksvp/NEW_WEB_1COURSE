@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="JS/cluster.js" defer></script>
+    <link rel="stylesheet" href="CSS/cluster.css">
+    <title>Clustering</title>
+</head>
+<body>
+    <div class="text-block">
+        <h1>clustering algorithm</h1>
+    </div>
+    <button id="startButton">start</button>
+    <button id="clearButton">clear</button>
+    <form action = "index.html">
+        <button id="backButton">back to future</button>
+    </form>
+    <form action = "index.html">
+        <button id="backButton">back to future</button>
+    </form>
+    <form action = "astar.html">
+        <button id="previousButton"><< previous algorithm</button>
+    </form>
+    <form action = "genetic.html">
+        <button id="nextButton">next algorithm >></button>
+    </form>
+    <input type="range" min="10" max="60" step="10" value= "10" id="slider" oninput="clearAll()">
+    <label for="num_cluster">enter the number of clusters</label>
+    <input type="number" min = "0" max = "100" value = "0" id="num_cluster">
+</body>
+</html>
