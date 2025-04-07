@@ -1,0 +1,105 @@
+@font-face {
+    font-family: "Guano";
+    src: url(/Font/Guano\ Apes\ \(Rus\ by\ sherbackoffalex\).otf) format("woff2"),
+    url(/Font/Guano\ Apes\ \(Rus\ by\ sherbackoffalex\).otf) format("woff"),
+    url(/Font/Guano\ Apes\ \(Rus\ by\ sherbackoffalex\).otf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Guano";
+    margin: 0;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background-color: #1D1F20;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(255, 87, 51, 0.2);
+    width: 90%;
+    max-width: 800px;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.frame {
+    margin: 20px 0;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+canvas {
+    border: 3px solid #bf12f3;
+    background-color: #1D1F20;
+    margin-bottom: 15px;
+}
+
+button {
+    font-family: "Guano";
+    padding: 10px 20px;
+    background-color: #bf12f3;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 120px;
+}
+
+button:hover {
+    background-color: #bf12f3;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#backButton, #nextButton {
+    position: fixed;
+    background-color: #1D1F20;
+    color: #ffffff;
+    border: 2px solid #bf12f3;
+}
+
+#backButton {
+    top: 20px;
+    left: 20px;
+    height: 75px;
+    width: 120px;
+}
+
+#nextButton {
+    bottom: 50%;
+    right: 20px;
+    height: 75px;
+    width: 120px;
+}

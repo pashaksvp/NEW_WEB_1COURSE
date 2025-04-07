@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A* Pathfinding Visualization</title>
+    <link rel="stylesheet" href="CSS/astar.css">
+</head>
+<body>
+    <div class="container">
+        <h1>A* Pathfinding with Maze Generator</h1>
+        <div class="controls">
+            <div class="frame">
+                <canvas id="canvas" width="380" height="380"></canvas>
+            </div>
+            <div class="buttons">
+                <button id="generateMaze">Generate Maze</button>
+                <button id="runAlgorithm">Run Algorithm</button>
+                <button id="setStart">Set Start</button>
+                <button id="setEnd">Set End</button>
+                <button id="setWall">Set Wall</button>
+                <button id="clearCanvas">Clear Canvas</button>
+            </div>
+        </div>
+    </div>
+    <form action="index.html">
+        <button id="backButton">back to future</button>
+    </form>
+    <form action="cluster.html">
+        <button id="nextButton">next algorithm >></button>
+    </form>
+    <script src="JS/astar.js"></script>
+</body>
+</html>
