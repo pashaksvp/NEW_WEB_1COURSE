@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: "Guano";
     src: url(/Font/Guano\ Apes\ \(Rus\ by\ sherbackoffalex\).otf) format("woff2"),
@@ -44,6 +45,32 @@ h1 {
 
 .frame {
     margin: 20px 0;
+}
+
+.grid-controls {
+    margin-bottom: 15px;
+}
+
+.grid-size {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.grid-size label {
+    margin-right: 5px;
+}
+
+.grid-size input {
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
+    text-align: center;
 }
 
 .buttons {

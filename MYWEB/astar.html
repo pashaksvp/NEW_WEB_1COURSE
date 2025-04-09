@@ -13,6 +13,15 @@
             <div class="frame">
                 <canvas id="canvas" width="380" height="380"></canvas>
             </div>
+            <div class="grid-controls">
+                <div class="grid-size">
+                    <label for="gridRows">Rows:</label>
+                    <input type="number" id="gridRows" min="5" max="50" value="19">
+                    <label for="gridCols">Columns:</label>
+                    <input type="number" id="gridCols" min="5" max="50" value="19">
+                    <button id="applyGridSize">Apply Grid Size</button>
+                </div>
+            </div>
             <div class="buttons">
                 <button id="generateMaze">Generate Maze</button>
                 <button id="runAlgorithm">Run Algorithm</button>

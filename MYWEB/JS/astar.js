@@ -1,11 +1,24 @@
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
-let cellSize = 20; 
-let rows = Math.floor(canvas.height / cellSize);
-let cols = Math.floor(canvas.width / cellSize);
+let cellSize = 19; 
+let rows = 19;
+let cols = 19;
 
-if (rows % 2 === 0) rows--;
-if (cols % 2 === 0) cols--;
+function updateCanvasSize() {
+    canvas.width = cols * cellSize;
+    canvas.height = rows * cellSize;
+    resetGrid();
+}
+
+function resetGrid() {
+    if (rows % 2 === 0) rows--;
+    if (cols % 2 === 0) cols--;
+    
+    startCell = {row: 0, col: 0};
+    endCell = {row: rows - 1, col: cols - 1};
+    grid = new Array(rows).fill(0).map(() => new Array(cols).fill(0));
+    draw();
+}
 
 let startCell = {row: 1, col: 1};
 let endCell = {row: rows - 2, col: cols - 2};
@@ -27,6 +40,29 @@ const colors = {
     neighbor: '#7209b7'
 };
 
+updateCanvasSize();
+
+document.getElementById('applyGridSize').addEventListener('click', function() {
+    let newRows = parseInt(document.getElementById('gridRows').value);
+    let newCols = parseInt(document.getElementById('gridCols').value);
+    
+    if (newRows < 5 || newRows > 49 || newCols < 5 || newCols > 49) {
+        alert('Размер должен быть от 5 до 49');
+        return;
+    }
+    
+    if (newRows % 2 === 0 || newCols % 2 === 0) {
+        alert('Пожалуйста, вводите только нечетные числа');
+        document.getElementById('gridRows').value = rows;
+        document.getElementById('gridCols').value = cols;
+        return;
+    }
+    
+    rows = newRows;
+    cols = newCols;
+    updateCanvasSize();
+});
+
 document.getElementById('setStart').addEventListener('click', function() {
     startSet = true;
     endSet = false;
@@ -46,10 +82,7 @@ document.getElementById('setWall').addEventListener('click', function() {
 });
 
 document.getElementById('clearCanvas').addEventListener('click', function() {
-    grid = new Array(rows).fill(0).map(() => new Array(cols).fill(0));
-    startCell = {row: 1, col: 1};
-    endCell = {row: rows - 2, col: cols - 2};
-    draw();
+    resetGrid();
 });
 
 document.getElementById('generateMaze').addEventListener('click', function() {
@@ -93,13 +126,13 @@ document.getElementById('runAlgorithm').addEventListener('click', function() {
 
 function generateMaze() {
     disableUI();
-    
+
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
             grid[i][j] = 1;
         }
     }
-    
+
     let startX = 1 + 2 * Math.floor(Math.random() * ((cols - 1) / 2));
     let startY = 1 + 2 * Math.floor(Math.random() * ((rows - 1) / 2));
     
@@ -335,6 +368,7 @@ function enableUI() {
     document.getElementById('runAlgorithm').disabled = false;
     document.getElementById('generateMaze').disabled = false;
     document.getElementById('clearCanvas').disabled = false;
+    document.getElementById('applyGridSize').disabled = false;
 }
 
 function disableUI() {
@@ -344,6 +378,7 @@ function disableUI() {
     document.getElementById('runAlgorithm').disabled = true;
     document.getElementById('generateMaze').disabled = true;
     document.getElementById('clearCanvas').disabled = true;
+    document.getElementById('applyGridSize').disabled = true;
 }
 
 function sleep(ms) {
