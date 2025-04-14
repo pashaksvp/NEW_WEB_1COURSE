@@ -1,4 +1,3 @@
-//основной холст
 let canvas = document.createElement('canvas');
 canvas.id = 'fieldCanvas';
 canvas.width = 600;
@@ -6,7 +5,6 @@ canvas.height = 600;
 document.body.append(canvas);
 let ctx = canvas.getContext('2d');
 
-//значения
 function createMatrix(x, y){
     let localMatrix = [];
     for(let i = 0; i < x; i++){
@@ -53,23 +51,26 @@ let pointMatrix = createMatrix(canvas.width/slider.value, canvas.height/slider.v
 let clustersNumber = document.getElementById('num_cluster').value;
 let pointArray = createArray(pointMatrix);
 
-/*кнопки вызывающие функции*/
 
 let startButton = document.getElementById('startButton');
 startButton.addEventListener('click', KMean);
 let clearButton = document.getElementById('clearButton');
 clearButton.addEventListener('click', clearAll);
 
-/*логика рисования канваса*/
 
-function drawPixel(event, ctx, slider){
+function drawPixel(event, ctx, slider) {
     let x = Math.floor(event.offsetX / slider.value);
     let y = Math.floor(event.offsetY / slider.value);
-    let correctX = x * slider.value;
-    let correctY = y * slider.value;
-    ctx.fillRect(correctX, correctY, slider.value, slider.value);
-    ctx.fillStyle = "#C0C0C0"; 
-    pointMatrix[y][x] = 1;
+    let correctX = x * slider.value + slider.value / 2;
+    let correctY = y * slider.value + slider.value / 2;
+    let radius = slider.value / 2;
+
+    ctx.fillStyle = "#C0C0C0";  
+    ctx.beginPath();
+    ctx.arc(correctX, correctY, radius, 0, Math.PI * 2);
+    ctx.fill();
+    
+    pointMatrix[y][x] = 1;  
 }
 
 canvas.addEventListener('mousedown', (event)=>draw(event, canvas, ctx))
@@ -87,8 +88,6 @@ function clearAll(){
     pointMatrix = createMatrix(canvas.width/slider.value , canvas.height/slider.value);
     pointArray = createArray(pointMatrix);
 }
-
-/*алгоритм*/
 
 
 function randomInt(min, max){
@@ -204,14 +203,19 @@ function createMatrixBySize(cols, rows){
     return matrix;
 }
 
-function createDotsByMatrix(clusters, colorsClusters){
+function createDotsByMatrix(clusters, colorsClusters) {
     for(let j = 0; j < clusters.length; j++) {
-        ctx.fillStyle =`rgb(${colorsClusters[j][0]},
+        ctx.fillStyle = `rgb(${colorsClusters[j][0]},
                             ${colorsClusters[j][1]},
                             ${colorsClusters[j][2]})`;
         for (let i = 0; i < clusters[j].length; i++) {
-            ctx.fillRect(clusters[j][i][0] * slider.value, clusters[j][i][1] * slider.value, slider.value, slider.value);
-
+            const x = clusters[j][i][0] * slider.value + slider.value/2;
+            const y = clusters[j][i][1] * slider.value + slider.value/2;
+            const radius = slider.value/2;
+            
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
         }
     }
 }
