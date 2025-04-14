@@ -121,6 +121,10 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
+.accordion__item:hover {
+    transform: translateY(-3px);
+}
+
 .accordion__item+.accordion__item{
     margin-top: 30px; 
 }
