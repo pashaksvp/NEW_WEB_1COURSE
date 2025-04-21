@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Decision Tree</title>
+    <link rel="stylesheet" href="CSS/tree.css">
+</head>
+
+<body>
+    <div class="div1">
+        <h1>Decision Tree Algorithm</h1>
+        <label for="trainingData">Training Data (CSV format):</label>
+        <textarea id="trainingData" rows="10" cols="50">feature1,feature2,feature3,label
+1,0,1,A
+0,1,0,B
+1,1,0,A
+0,0,1,B</textarea>
+        <button onclick="buildTree()">Build Tree</button>
+        <button onclick="clearTree()">Clear</button>
+    </div>
+    
+    <div class="div1">
+        <label for="inputData">Input Data for Prediction (CSV format):</label>
+        <textarea id="inputData" rows="4" cols="50">1,0,1</textarea>
+        <button onclick="predict()">Predict</button>
+    </div>
+    
+    <div class="div1">
+        <div id="treeVisualization"></div>
+        <div id="predictionResult"></div>
+        <div id="predictionPath"></div>
+    </div>
+    
+    <form action="index.html">
+        <button id="backButton">back to future</button>
+    </form>
+    <form action="ant.html">
+        <button id="previousButton"><< previous algorithm</button>
+    </form>
+    <form action="genetic.html">
+        <button id="nextButton">next algorithm >></button>
+    </form>
+    
+    <script src="JS/tree.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</body>
+
+</html>
