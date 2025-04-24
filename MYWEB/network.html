@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Neural Network</title>
+    <link rel="stylesheet" href="CSS/network.css">
+</head>
+
+<body>
+    <div class="div1">
+        <h1>Neural Network</h1>
+        <p id="prediction">Click pixels to draw a digit (0-9)</p>
+        <p id="instructions">Click to toggle pixels (black/white)</p>
+    </div>
+    <div class="div1">
+        <div class="pixel-grid" id="pixelGrid"></div>
+        <div class="button-group">
+            <button onclick="clearPixels()">Clear</button>
+            <button onclick="predictDigit()">Recognize</button>
+        </div>
+    </div>
+    <form action="index.html">
+        <button id="backButton">back to future</button>
+    </form>
+    <form action="tree.html">
+        <button id="previousButton"><< previous algorithm</button>
+    </form>
+    <form action="astar.html">
+        <button id="nextButton">next algorithm >></button>
+    </form>
+    <script src="JS/network.js"></script>
+</body>
+
+</html>

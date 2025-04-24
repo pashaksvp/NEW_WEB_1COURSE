@@ -1,0 +1,122 @@
+@font-face {
+    font-family: "Guano";
+    src: url(/Font/Guano\ Apes\ \(Rus\ by\ sherbackoffalex\).otf) format("woff2"),
+    url(/Font/Guano\ Apes\ \(Rus\ by\ sherbackoffalex\).otf) format("woff"),
+    url(/Font/Guano\ Apes\ \(Rus\ by\ sherbackoffalex\).otf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: "Guano";
+    margin: 0;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+    padding: 20px;
+  }
+  
+  .div1 {
+    background-color: #1D1F20;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  }
+  
+  h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  .pixel-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+    gap: 2px;
+    margin: 0 auto;
+    border: 3px solid #bf12f3;
+    padding: 5px;
+    background-color: #bf12f3;
+  }
+  
+  .pixel {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    cursor: pointer;
+    transition: background-color 0.1s;
+  }
+  
+  .pixel.active {
+    background-color: #fff;
+  }
+  
+  .button-group {
+    margin-top: 15px;
+  }
+  
+  button {
+    font-family: "Guano";
+    height: 40px;
+    width: 100px;
+    background-color: #bf12f3;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: all 0.3s;
+  }
+  
+  button:hover {
+    background-color: #bf12f3;
+    transform: scale(1.05);
+  }
+  
+  #backButton, #previousButton, #nextButton {
+    position: fixed;
+    background-color: #1D1F20;
+    color: #ffffff;
+    border: 2px solid #bf12f3;
+  }
+  
+  #backButton {
+    top: 20px;
+    left: 20px;
+    height: 75px;
+    width: 120px;
+  }
+  
+  #previousButton {
+    bottom: 50%;
+    left: 20px;
+    height: 75px;
+    width: 120px;
+  }
+  
+  #nextButton {
+    bottom: 50%;
+    right: 20px;
+    height: 75px;
+    width: 120px;
+  }
+  
+  #prediction {
+    font-size: 24px;
+    color: #bf12f3;
+    min-height: 36px;
+    margin: 10px 0;
+  }
+  
+  #instructions {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 10px 0;
+  }
