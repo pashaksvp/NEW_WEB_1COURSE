@@ -25,7 +25,7 @@ function initializeCanvas() {
 
 function drawPoints() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = '#FFFFFF';
     points.forEach(point => {
         ctx.beginPath();
         ctx.arc(point.x, point.y, POINT_RADIUS, 0, Math.PI * 2);

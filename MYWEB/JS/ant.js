@@ -21,7 +21,7 @@ function onMouseDown(event) {
     const xCoordinate = event.clientX - canvasElement.offsetLeft;
     const yCoordinate = event.clientY - canvasElement.offsetTop;
 
-    context.fillStyle = 'black';
+    context.fillStyle = '#FFFFFF';
     context.beginPath();
     context.arc(xCoordinate - 8, yCoordinate - 8, 5, 0, Math.PI * 2);
     context.fill();
